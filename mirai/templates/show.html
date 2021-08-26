@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Employee Management System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+    <center><div><h2 class="bg-Dark text-dark">List of Student Details</h2></div></center>
+    <table class="table">
+      <thead class="bg-white text-dark">
+        <tr>
+          <th>Roll no.</th>
+          <th>Student Name</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Fee Status</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for student in students %}
+        <tr>
+          <td>{{student.sRollno}}</td>
+          <td>{{student.sName}}</td>
+          <td>{{student.sAddress}}</td>
+          <td>{{student.sEmail}}</td>
+           <td>{{student.sCourse}}</td>
+          <td>{{student.sFeeStatus}}</td>
+          <td>
+            <!--<a href="/delete/{{company.cName}}">Delete</a>
+            <a href="/edit/{{company.cName}}">Update</a>
+            <a href="emp">Update</a>-->
+            <button class="btn-danger btn-sm" onclick="location.href='/delete/{{student.sName}}'">Delete</button>
+            <button class="btn-success btn-sm" onclick="location.href='/edit/{{student.sName}}'">Update</button>
+            <button class="btn-primary btn-sm" onclick="location.href='/emp'">Add his/her Result</button>
+
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

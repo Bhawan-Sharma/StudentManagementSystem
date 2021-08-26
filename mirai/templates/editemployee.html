@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student System</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  </head>
+  <body>
+    <div>
+      <div class="booking-form3">
+          <h3 style="color: bisque;padding-top: 5%;">Update Student Result </h3>
+    
+    <form method="POST" action="/updateEmp/{{employee.Name}}" class="forma">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label class="form-label">Student Rollno:</label>
+        
+        <input type="text" name="Rollno" value="{{employee.Rollno}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Student Name:</label>
+        
+        <input type="text" name="Name" value="{{employee.Name}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Course:</label>
+        <input type="text" name="Course" value="{{employee.Course}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Max Marks:</label>
+        <input type="text" name="MaxMarks" value="{{employee.MaxMarks}}" />
+      </div><br>
+
+      <div class="form-group">
+        <label class="form-label">Marks Obtained:</label>
+        <input type="text" name="MarksObtained" value="{{employee.MarksObtained}}" />
+      </div><br>
+      <div class="form-group">
+        <label class="form-label">Result:</label>
+        <input type="text" name="Result" value="{{employee.Result}}" />
+      </div><br>
+
+      <button type="submit" class="btn-success">Submit</button>
+    </form>
+  </div></div>
+  </body>
+</html>
