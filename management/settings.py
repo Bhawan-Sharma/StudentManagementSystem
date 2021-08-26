@@ -25,7 +25,7 @@ SECRET_KEY = 'b%h5$w2-b^2(%5=@86)g@dk4&k5vp86$so3&qv&h2=d(%7pit%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','studentmanagement-system.herokuapp.com']
 
 
 # Application definition
